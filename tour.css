@@ -1,0 +1,53 @@
+main{
+	padding: 1em 2em;
+	text-align: center;
+}
+main ul{
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	padding-left: 1.5em;
+	text-align: start;
+}
+main ul > li{
+	position: relative;
+}
+main ul > li::marker{
+	position: absolute;
+	top: 0;
+	left: -1.5em;
+}
+main .content_title{
+	margin-top: var(--article-gap);
+}
+
+.laboratory_container > .content_title{
+	margin-top: calc(var(--article-gap) / 2);
+}
+.laboratory_container ul{
+	list-style-type: none;
+	padding-left: 0;
+}
+.laboratory_container ul > li{
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+.laboratory_container ul > li > a{
+	margin-bottom: var(--border-radius);
+}
+.laboratory_container .laboratory_description{
+	padding: 0;
+	margin: 0;
+}
+
+.date_container .date{
+	margin: .5em 0;
+}
+.date_container .date > span{
+	display: inline-block;
+	word-break: keep-all;
+}
+.apply_container p{
+	text-align: left;
+	text-align: start;
+}

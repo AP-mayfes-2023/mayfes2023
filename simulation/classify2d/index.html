@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <title>classify2d</title>
+    <meta charset="UTF-8" />
+    <script src="./main.js" defer></script>
+
+    <link rel="stylesheet" href="./index.css">
+  </head>
+  <body>
+    <main class="panes">
+      <div id="net_canvas_container" class="canvas_container">
+        <canvas id="net_canvas">Browser not supported for Canvas. Get a real browser.</canvas>
+      </div>
+      <div id="data_canvas_container" class="canvas_container">
+        <canvas id="data_canvas">Browser not supported for Canvas. Get a real browser.</canvas>
+      </div>
+
+      <div class="pane" id="net_pane">
+        <p>change neural network and restart learning</p>
+        <div class="button_group">
+          <button id="buttonnet1" type="button" onclick="pushNewLayer()">
+            add new layer at the last
+          </button>
+          <button id="button-delete-layer" type="button" onclick="popLastLayer()">
+            delete the last layer
+          </button>
+        </div>
+
+        <div>
+          <span>select which layer to edit perceptrons</span>
+          <wbr>
+          <div class="small_button_group">
+            <button id="button-move-left" type="button" onclick="moveSelectedToLeft()">◀</button>
+            <button id="button-move-right" type="button" onclick="moveSelectedToRight()">▶</button>
+        </div>
+        </div>
+
+        <div class="button_group">
+          <button id="button-add-perceptron" type="button" onclick="addPerceptronToSelectedLayer()">
+            add perceptron
+          </button>
+          <button id="button-delete-perceptron" type="button" onclick="deletePerceptronFromSelectedLayer()">
+            delete perceptron
+          </button>
+        </div>
+
+        <div id="showingloss">loss = 0<br>100 cycles through data in 0ms</div>
+
+      </div>
+
+      <div class="pane" id="data_pane">
+        <p>select input data</p>
+
+        <div class="button_group">
+          <button id="buttondata1" type="button" onclick="simpleData()">
+            simple
+          </button>
+          <button id="buttondata2" type="button" onclick="circleData()">
+            circle
+          </button>
+          <button id="buttondata3" type="button" onclick="spiralData()">
+            spiral
+          </button>
+          <button id="buttondata4" type="button" onclick="randomData()">
+            random
+          </button>
+        </div>
+
+        <p>
+          you can also edit input data by click in the above canvas
+          <br />
+          click → add red
+          <br />
+          shift + click → add green
+          <br />
+          control or alt or option + click → delete the nearest data
+        </p>
+        <div class="button_group">
+          <button id="buttonneuralnet1" type="button" onclick="loadNeuralNet()">
+            reset leaning
+          </button>
+          <button id="buttonstoptrain" type="button" onclick="changeIsTraining()">pause</button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

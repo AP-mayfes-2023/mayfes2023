@@ -1,0 +1,4 @@
+#groups_container{
+	--grid-layout: 1fr;
+	width: 100%;
+}

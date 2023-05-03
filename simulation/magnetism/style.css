@@ -1,0 +1,35 @@
+*{
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* なんかmain#canvas_containerのheightが3,4pxくらい大きい... canvasではみ出てるマス分？？ */
+}
+
+#canvas_container{
+  text-align: center;
+  padding-right: 0.25rem;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #000;
+}
+form>label{
+  padding: 0.25rem;
+  border-bottom: 1px dashed #000;
+  text-align: center;
+}
+form>label:last-child{
+  border-bottom: unset;
+  padding-top: calc(0.25rem - 0.5px);
+}

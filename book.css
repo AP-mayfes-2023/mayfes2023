@@ -1,0 +1,46 @@
+/* ----------- main ---------- */
+.description_container{
+	padding: 1.5em 2em;
+}
+.description_container .imgs_container{
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+.description_container .imgs_container > img{
+	max-width: 100%;
+}
+.description_container .imgs_container > .price{
+	font-size: 1.5em;
+	font-weight: bolder;
+	text-align: center;
+}
+@media screen and (max-width: 749px) {
+	.description_container .description{
+		margin-top: 1em;
+		border-top: 1px dashed gray;
+	}
+	.description_container .imgs_container > img{
+		width: 100%;
+	}
+}
+@media screen and (min-width: 750px) {
+	.imgs_container{
+		width: 100%;
+		text-align: center;
+	}
+	.imgs_container > img{
+		min-width: 0;
+		min-height: 0;
+		max-height: 25em;
+	}
+	.imgs_container > img:first-child{
+		margin-right: 2em;
+	}
+}
+
+
+
+.contents_container{
+	padding: 0 2em;
+}

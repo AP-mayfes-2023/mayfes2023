@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>double pendulum</title>
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <script
+      src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.6/p5.min.js"
+      defer
+    ></script>
+    <script src="./sketch.js" defer></script>
+  </head>
+  <body>
+    <div id="pane">
+      <div id="canvas-container"></div>
+
+      <div id="slider-container">
+        <input
+          type="range"
+          id="slider-number-of-pendulum"
+          name="number-of-pendulum"
+          min="1"
+          max="20"
+          value="3"
+        />
+        <label for="number-of-pendulum" , id="label-number-of-pendulum"
+          >振り子の本数</label
+        >
+      </div>
+    </div>
+  </body>
+</html>
