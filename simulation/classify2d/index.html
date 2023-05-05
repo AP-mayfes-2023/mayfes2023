@@ -4,82 +4,123 @@
     <meta charset="UTF-8" />
     <script src="./main.js" defer></script>
 
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
     <main class="panes">
       <div id="net_canvas_container" class="canvas_container">
-        <canvas id="net_canvas">Browser not supported for Canvas. Get a real browser.</canvas>
+        <canvas id="net_canvas"
+          >Browser not supported for Canvas. Get a real browser.</canvas
+        >
       </div>
       <div id="data_canvas_container" class="canvas_container">
-        <canvas id="data_canvas">Browser not supported for Canvas. Get a real browser.</canvas>
+        <canvas id="data_canvas"
+          >Browser not supported for Canvas. Get a real browser.</canvas
+        >
       </div>
 
       <div class="pane" id="net_pane">
-        <p>change neural network and restart learning</p>
+        <p>ネットワークの構造を変える</p>
+
+        <div class="demo-buttons">
+          <button id="demonet1" type="button" onclick="demo1LNet()">
+            隠れ層が1層のネットワーク
+          </button>
+          <button id="demonet3" type="button" onclick="demo3LNet()">
+            隠れ層が2層のネットワーク
+          </button>
+        </div>
+
+        <p>高度な編集</p>
         <div class="button_group">
           <button id="buttonnet1" type="button" onclick="pushNewLayer()">
-            add new layer at the last
+            層を追加
           </button>
-          <button id="button-delete-layer" type="button" onclick="popLastLayer()">
-            delete the last layer
+          <button
+            id="button-delete-layer"
+            type="button"
+            onclick="popLastLayer()"
+          >
+            層を削除
           </button>
         </div>
 
         <div>
-          <span>select which layer to edit perceptrons</span>
-          <wbr>
+          <span>編集する層を選択する矢印を移動</span>
+          <wbr />
           <div class="small_button_group">
-            <button id="button-move-left" type="button" onclick="moveSelectedToLeft()">◀</button>
-            <button id="button-move-right" type="button" onclick="moveSelectedToRight()">▶</button>
-        </div>
+            <button
+              id="button-move-left"
+              type="button"
+              onclick="moveSelectedToLeft()"
+            >
+              ◀
+            </button>
+            <button
+              id="button-move-right"
+              type="button"
+              onclick="moveSelectedToRight()"
+            >
+              ▶
+            </button>
+          </div>
         </div>
 
         <div class="button_group">
-          <button id="button-add-perceptron" type="button" onclick="addPerceptronToSelectedLayer()">
-            add perceptron
+          <button
+            id="button-add-perceptron"
+            type="button"
+            onclick="addPerceptronToSelectedLayer()"
+          >
+            矢印の先にユニットを1つ追加
           </button>
-          <button id="button-delete-perceptron" type="button" onclick="deletePerceptronFromSelectedLayer()">
-            delete perceptron
+          <button
+            id="button-delete-perceptron"
+            type="button"
+            onclick="deletePerceptronFromSelectedLayer()"
+          >
+            矢印の先にユニットを1つ削除
           </button>
         </div>
-
-        <div id="showingloss">loss = 0<br>100 cycles through data in 0ms</div>
-
       </div>
 
       <div class="pane" id="data_pane">
-        <p>select input data</p>
+        <p>データを選択</p>
 
         <div class="button_group">
-          <button id="buttondata1" type="button" onclick="simpleData()">
-            simple
-          </button>
           <button id="buttondata2" type="button" onclick="circleData()">
             circle
           </button>
           <button id="buttondata3" type="button" onclick="spiralData()">
             spiral
           </button>
+          <button id="buttondata1" type="button" onclick="mayFes()">
+            logo?
+          </button>
           <button id="buttondata4" type="button" onclick="randomData()">
             random
           </button>
         </div>
 
-        <p>
-          you can also edit input data by click in the above canvas
-          <br />
-          click → add red
-          <br />
-          shift + click → add green
-          <br />
-          control or alt or option + click → delete the nearest data
-        </p>
+        <p>クリックすると、その位置にデータの点を追加します</p>
+
         <div class="button_group">
           <button id="buttonneuralnet1" type="button" onclick="loadNeuralNet()">
-            reset leaning
+            学習をやり直す
           </button>
-          <button id="buttonstoptrain" type="button" onclick="changeIsTraining()">pause</button>
+          <button
+            id="buttonstoptrain"
+            type="button"
+            onclick="changeIsTraining()"
+          >
+            一時停止
+          </button>
+        </div>
+
+        <div id="showingloss">
+          loss = 0
+          <br />
+          100 cycles through data in 0ms
         </div>
       </div>
     </main>
