@@ -128,21 +128,25 @@ header .logo{
 }
 header .logo.keisu_logo{
 	left: 0;
-	background-image: url("./imgs/keisu_logo.png");
-	background-position: left top;
+	background-image: url("./imgs/keisu_logo_alt.png");
+	background-position: left center;
 	background-size: cover;
 }
 header .logo.bukkou_logo{
 	right: 0;
-	background-image: url("./imgs/bukkou_logo.png");
+	background-image: url("./imgs/bukkou_logo_alt.png");
 	background-position: center;
 	background-size: 50%;
 	background-repeat: no-repeat;
+	background-size: cover;
+}
+header > *{
+	position: relative;
 }
 
-@media screen and (max-width: 749px) {
+@media screen and (min-width: 749px) {
 	header .logo.bukkou_logo{
-		background-position: right .75em center;
+		background-position: top 30% center;
 	}
 }
 
